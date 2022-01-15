@@ -28,3 +28,11 @@ Basically just did Day 1 and 2 together. Fairly simple problems.
 Learned about linked lists in C. See: 
 - https://stackoverflow.com/questions/982388/how-to-implement-a-linked-list-in-c
 - http://cslibrary.stanford.edu/103/LinkedListBasics.pdf
+
+Also learned about bit shifting. I already knew ABOUT it but 
+never had a need for it in .Net. Definitely had fun using it
+in these problems.
+
+Also learned about Function pointers. I use function arguments
+in C# all the time, it's good to know they are available in
+C and C++.
