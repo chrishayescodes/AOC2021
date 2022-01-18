@@ -219,7 +219,7 @@ void load_cards(int cardcount, struct queue *queue, struct card cards[]){
     }
 }
 
-bool load_game(int *game, int *game_item_count, int *linecount, struct queue *queue){
+bool load_game(int **game, int *game_item_count, int *linecount, struct queue *queue){
     
     std::ifstream file("./files/input.txt");
 
@@ -230,7 +230,7 @@ bool load_game(int *game, int *game_item_count, int *linecount, struct queue *qu
 
     char *charline = new char[line.length() + 1];
     strcpy(charline, line.c_str());
-    load_ints(charline, &*game_item_count, &game, ',');
+    load_ints(charline, &*game_item_count, &*game, ',');
     printf("create queue");
     while (std::getline(file, line))
     {
@@ -238,7 +238,7 @@ bool load_game(int *game, int *game_item_count, int *linecount, struct queue *qu
         strcpy(data, line.c_str());
         printf("enqueing: %s\n", data);
         enqueue(queue, data);
-        *linecount++;
+        (*linecount)++;
     }
     file.close();
     return true;
@@ -251,7 +251,7 @@ int main()
     int linecount = 0;
     struct queue *queue = createqueue();
 
-    if(!load_game(game, &game_item_count, &linecount, queue)){
+    if(!load_game(&game, &game_item_count, &linecount, queue)){
         printf("ERROR: unable to load game");
         return -1;
     }
