@@ -36,3 +36,20 @@ in these problems.
 Also learned about Function pointers. I use function arguments
 in C# all the time, it's good to know they are available in
 C and C++.
+
+### Day 4
+Part 01
+
+A lot more understanding of pointers and pointers to pointers. 
+Passing, understanding state, pointers that are arrays. Getting
+pointers, deconstructing from pointers.
+
+There was considerable refactoring to get work into separate
+methods. Another learning point was the management of state
+via pointers. Where object oriented programing deals with state
+in an object based on a class, state in a language like C
+depends on allocating memory in a root method and passing that
+value to other methods to modify it's value. This is a
+foriegn idea to a language like C# where you tend to avoid
+out variables and ref values in favor of state managed at
+the class level.

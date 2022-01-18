@@ -133,27 +133,11 @@ int *load_bingoline(char *line)
 {
     int *items = (int *)malloc(sizeof(int) * 5);
     int curr = 0;
-    for (int i = 0; i < 14; i++)
+    for (int i = 0; i < 5; i++)
     {
-        if (line[i] != ' ')
-        {
-            if (line[i + 1] != ' ')
-            { // two digits
-                char num[2];
-                num[0] = line[i];
-                num[1] = line[i + 1];
-                items[curr] = atoi(num);
-                i++;
-                curr++;
-            }
-            else
-            {
-                char num[1];
-                num[0] = line[i];
-                items[curr] = atoi(num);
-                curr++;
-            }
-        }
+        char *numstr = (char*)malloc(sizeof(char)*5);
+        memcpy(numstr,&line[(i * 3)],sizeof(char)*2);
+        items[i] = atoi(numstr);
     }
     return items;
 }
